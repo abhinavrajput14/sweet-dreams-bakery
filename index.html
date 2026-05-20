@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Dreams Bakery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#ffffff;
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#f4edff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 8%;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      color:#8b5cf6;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#444;
+      margin-left:25px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#8b5cf6;
+    }
+
+    .hero{
+  height:100vh;
+
+  background:
+  linear-gradient(rgba(91,33,182,0.20),rgba(91,33,182,0.20)),
+  url('front.jpg');
+
+  background-size:100% auto;
+  background-repeat:no-repeat;
+  background-position:top center;
+  background-color:#d8c7ff;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  text-align:center;
+
+  color:white;
+  padding-bottom:80px;
+}
+    .hero-content{
+      animation:fade 1.5s ease;
+    }
+
+    .hero h1{
+      font-size:75px;
+      margin-bottom:20px;
+      text-shadow:0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .hero p{
+      font-size:22px;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 35px;
+      background:#8b5cf6;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+      box-shadow:0 0 20px rgba(139,92,246,0.5);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      background:#7c3aed;
+    }
+
+    .section{
+      padding:100px 8%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:45px;
+      margin-bottom:60px;
+      color:#8b5cf6;
+    }
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#f9f7ff;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-12px);
+    }
+
+    .card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .card:hover img{
+      transform:scale(1.08);
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card-content h3{
+      margin-bottom:10px;
+      font-size:25px;
+      color:#6d28d9;
+    }
+
+    .price{
+      color:#7c3aed;
+      font-weight:700;
+      margin-top:15px;
+      font-size:20px;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:25px;
+    }
+
+    .about-text h2{
+      font-size:45px;
+      color:#8b5cf6;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    .contact{
+      text-align:center;
+      background:#8b5cf6;
+      color:white;
+      border-radius:30px;
+      padding:60px 20px;
+    }
+
+    .contact h2{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .contact p{
+      margin-bottom:18px;
+      font-size:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#5b21b6;
+      color:white;
+      margin-top:50px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      width:60px;
+      height:60px;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      text-decoration:none;
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+      z-index:1000;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        height:90vh;
+      }
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      nav{
+        display:none;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">🍰 Sweet Dreams Bakery</div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Bakery</a>
+    <a href="#">Ice Cream</a>
+    <a href="#">Snacks</a>
+    <a href="#">Custom Cakes</a>
+    <a href="#">Contact</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Fresh & Tasty Everyday</h1>
+
+    <p>Cakes • Breads • Pastries • Ice Creams • Snacks</p>
+
+    <a href="https://wa.me/919876543210" class="btn">
+      Order Now
+    </a>
+
+  </div>
+
+</section>
+
+<!-- BAKERY ITEMS -->
+
+<section class="section">
+
+  <h2 class="title">Bakery Specials 🍰</h2>
+
+  <div class="menu-grid">
+
+    <div class="card">
+
+      <img src="cake.jpg">
+
+      <div class="card-content">
+
+        <h3>Chocolate Cake</h3>
+
+        <p>Soft chocolate cake with creamy frosting.</p>
+
+        <div class="price">₹450</div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="bread.jpg">
+
+      <div class="card-content">
+
+        <h3>Fresh Bread</h3>
+
+        <p>Freshly baked soft bread available daily.</p>
+
+        <div class="price">₹30</div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="pastry.jpg">
+
+      <div class="card-content">
+
+        <h3>Pastry</h3>
+
+        <p>Fresh creamy pastry available in different flavours.</p>
+
+        <div class="price">₹25 each</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ICE CREAMS -->
+
+<section class="section">
+
+  <h2 class="title">Ice Creams 🍦</h2>
+
+  <div class="menu-grid">
+
+    <div class="card">
+
+      <img src="cone.jpg">
+
+      <div class="card-content">
+
+        <h3>Ice Cream Cone</h3>
+
+        <p>Available in small, medium and large sizes.</p>
+
+        <div class="price">₹10 • ₹20 • ₹30</div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="bars.jpg">
+
+      <div class="card-content">
+
+        <h3>Chocobar</h3>
+
+        <p>Chocolate coated frozen treat loved by everyone.</p>
+
+        <div class="price">₹10 • ₹20 • ₹30</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SNACKS -->
+
+<section class="section">
+
+  <h2 class="title">Snacks & Chips 🥔</h2>
+
+  <div class="menu-grid">
+
+    <div class="card">
+
+      <img src="lays.jpg">
+
+      <div class="card-content">
+
+        <h3>Lays Chips</h3>
+
+        <p>Classic crunchy potato chips.</p>
+
+        <div class="price">₹20 • ₹30</div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="kurkure.jpg">
+
+      <div class="card-content">
+
+        <h3>Kurkure</h3>
+
+        <p>Spicy crunchy snacks available daily.</p>
+
+        <div class="price">₹10 • ₹20</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CUSTOMISED CAKES -->
+
+<section class="section">
+
+  <h2 class="title">Customised Cakes 🎂</h2>
+
+  <p style="text-align:center; margin-top:-40px; margin-bottom:40px; color:#666;">
+    Our most loved customised cakes by customers ❤️
+  </p>
+
+  <div class="menu-grid">
+
+    <div class="card">
+
+      <img src="Cake 3.jpg">
+
+      <div class="card-content">
+
+        <h3>Lion Theme Cake</h3>
+
+        <p>Perfect for kids birthday parties.</p>
+
+        <div class="price">Starting ₹550</div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="Cake1.jpg">
+
+      <div class="card-content">
+
+        <h3>Butterfly Heart Cake</h3>
+
+        <p>Beautiful customised heart shaped cake.</p>
+
+        <div class="price">Starting ₹500</div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="cake.jpg">
+
+      <div class="card-content">
+
+        <h3>Chocolate Party Cake</h3>
+
+        <p>Rich chocolate cake for celebrations.</p>
+
+        <div class="price">Starting ₹450</div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="weddingcake.jpg">
+
+      <div class="card-content">
+
+        <h3>Wedding Cake</h3>
+
+        <p>Elegant multi-layer wedding cakes available.</p>
+
+        <div class="price">Starting ₹2000</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about">
+
+  <img src="Shop.jpg">
+
+  <div class="about-text">
+
+    <h2>About Us</h2>
+
+    <p>
+      Sweet Dreams Bakery serves fresh bakery items,
+      ice creams and snacks with quality and taste.
+      We make every day sweeter for our customers.
+    </p>
+
+    <br>
+
+    <ul style="list-style:none; line-height:2; font-size:18px;">
+      <li>🍞 Bread - ₹30</li>
+      <li>🎂 Pastry - ₹25</li>
+      <li>🍦 Cone - ₹10/20/30</li>
+      <li>🥔 Lays - ₹20/30</li>
+    </ul>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section">
+
+  <div class="contact">
+
+    <h2>Visit Our Shop 📍</h2>
+
+    <p>Sweet Dreams Bakery</p>
+
+    <p>A Bandhua, 284, Near St. Paul School</p>
+
+    <p>Farrukhabad, Uttar Pradesh 209601</p>
+
+    <p>📞 +91 98765 43210</p>
+
+    <br>
+
+    <a href="https://wa.me/919876543210" class="btn">
+      Chat on WhatsApp
+    </a>
+
+    <br><br>
+
+    <a href="tel:+919876543210" class="btn">
+      📞 Call Now
+    </a>
+
+  </div>
+
+  <br><br>
+
+  <iframe 
+  src="https://www.google.com/maps?q=Sweet%20Dreams%20Bakery%20Farrukhabad&output=embed"
+  width="100%" 
+  height="300" 
+  style="border:0; border-radius:20px;">
+  </iframe>
+
+</section>
+
+<footer>
+
+  <p>© 2026 Sweet Dreams Bakery • Made with ❤️</p>
+
+  <br>
+
+  <p>Owned by Sweet Dreams Family ❤️</p>
+
+</footer>
+
+<a href="https://wa.me/919876543210" class="whatsapp-float">
+💬
+</a>
+
+</body>
+</html>
