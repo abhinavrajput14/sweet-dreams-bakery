@@ -3,106 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sweet Dreams Bakery</title>
+<title>Sweet Dreams Bakery V3</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{background:#fff;color:#333} html{scroll-behavior:smooth}
-header{position:fixed;top:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:#f4edff;z-index:1000}
-.logo{font-size:28px;font-weight:700;color:#8b5cf6}
-nav a{text-decoration:none;color:#444;margin-left:20px}
-.hero{height:100vh;background:linear-gradient(rgba(91,33,182,.25),rgba(91,33,182,.25)),url('front.jpg');background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:center;text-align:center;color:#fff;padding-bottom:80px}
-.hero h1{font-size:70px}
-.btn{display:inline-block;padding:14px 30px;background:#8b5cf6;color:#fff;text-decoration:none;border-radius:30px;margin-top:15px}
+body{background:#fff;color:#333}
+header{position:fixed;top:0;width:100%;background:#f4edff;padding:15px 8%;display:flex;justify-content:space-between;align-items:center;z-index:1000}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-wrap img{width:55px;height:55px;object-fit:contain}
+.logo-text{font-size:28px;font-weight:700;color:#8b5cf6}
+nav a{text-decoration:none;color:#444;margin-left:18px}
+.hero{height:100vh;background:url('front.jpg') center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding-bottom:80px;color:white}
+.hero h1{font-size:70px;text-shadow:0 4px 10px rgba(0,0,0,.4)}
 .section{padding:90px 8%}
-.title{text-align:center;color:#8b5cf6;font-size:42px;margin-bottom:40px}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{background:#f9f7ff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:.3s}
-.card:hover{transform:translateY(-8px)}
-.card img{width:100%;height:240px;object-fit:cover}
-.card-content{padding:20px}
-.price{color:#7c3aed;font-weight:700;margin-top:10px;line-height:1.8}
-.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center}
-.about img{width:100%;border-radius:20px}
-.contact{text-align:center;background:#8b5cf6;color:#fff;padding:50px;border-radius:20px}
-.whatsapp-float{position:fixed;bottom:25px;right:25px;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:28px}
-footer{text-align:center;padding:25px;background:#5b21b6;color:#fff}
+.title{text-align:center;color:#8b5cf6;font-size:40px;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{background:#f9f7ff;border-radius:18px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,.08)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card div{padding:18px}
+.price{font-weight:700;color:#7c3aed;line-height:1.8}
+.accordion{background:#f9f7ff;border-radius:15px;margin-bottom:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+.accordion summary{padding:18px;font-weight:600;cursor:pointer}
+.accordion-content{padding:0 18px 18px}
+.btn{display:inline-block;background:#8b5cf6;color:#fff;padding:14px 30px;border-radius:30px;text-decoration:none}
+.contact{background:#8b5cf6;color:#fff;text-align:center;padding:50px;border-radius:20px}
+.whatsapp{position:fixed;right:25px;bottom:25px;width:60px;height:60px;background:#25d366;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:28px}
+footer{text-align:center;background:#5b21b6;color:#fff;padding:25px}
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">🍰 Sweet Dreams Bakery</div>
-<nav><a href="#">Home</a><a href="#">Cakes</a><a href="#">Cold Drinks</a><a href="#">Custom Cakes</a><a href="#">Contact</a></nav>
+<div class="logo-wrap">
+<img src="logo.png" alt="logo">
+<div class="logo-text">Sweet Dreams Bakery</div>
+</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Cakes</a>
+<a href="#">Ice Creams</a>
+<a href="#">Cold Drinks</a>
+<a href="#">Contact</a>
+</nav>
 </header>
 
-<section class="hero"><div><h1>Fresh & Tasty Everyday</h1><p>Cakes • Pastries • Ice Creams • Snacks • Cold Drinks</p><a class="btn" href="https://wa.me/918874247586">Order Now</a></div></section>
-
-<section class="section"><div class="contact"><h2>🎉 Today's Special</h2><p>Blueberry Cheesecake</p></div></section>
-
-<section class="section">
-<h2 class="title">Signature Cakes 🎂</h2>
-<div class="menu-grid">
-<div class="card"><img src="cake1.jpg"><div class="card-content"><h3>Chocolate Truffle Cake</h3><div class="price">½ Kg ₹399<br>1 Kg ₹699<br>2 Kg ₹1299</div></div></div>
-<div class="card"><img src="cake2.jpg"><div class="card-content"><h3>Red Velvet Cake</h3><div class="price">½ Kg ₹449<br>1 Kg ₹799<br>2 Kg ₹1499</div></div></div>
-<div class="card"><img src="cake3.jpg"><div class="card-content"><h3>Black Forest Cake</h3><div class="price">½ Kg ₹349<br>1 Kg ₹649<br>2 Kg ₹1199</div></div></div>
-<div class="card"><img src="cake4.jpg"><div class="card-content"><h3>Butterscotch Delight</h3><div class="price">½ Kg ₹399<br>1 Kg ₹699<br>2 Kg ₹1299</div></div></div>
-<div class="card"><img src="cake5.jpg"><div class="card-content"><h3>Blueberry Cheesecake</h3><div class="price">½ Kg ₹499<br>1 Kg ₹899<br>2 Kg ₹1699</div></div></div>
-</div></section>
-
-<section class="section">
-<h2 class="title">Pastries 🍰</h2>
-<div class="menu-grid">
-<div class="card"><img src="pastry1.jpg"><div class="card-content"><h3>Chocolate Pastry</h3><div class="price">₹89</div></div></div>
-<div class="card"><img src="pastry2.jpg"><div class="card-content"><h3>Red Velvet Pastry</h3><div class="price">₹99</div></div></div>
-<div class="card"><img src="pastry3.jpg"><div class="card-content"><h3>Pineapple Pastry</h3><div class="price">₹79</div></div></div>
-<div class="card"><img src="pastry4.jpg"><div class="card-content"><h3>Oreo Pastry</h3><div class="price">₹99</div></div></div>
-</div></section>
-
-<section class="section"><h2 class="title">Ice Creams 🍦</h2><div class="menu-grid"><div class="card"><img src="cone.jpg"><div class="card-content"><h3>Ice Cream Cone</h3></div></div><div class="card"><img src="bars.jpg"><div class="card-content"><h3>Chocobar</h3></div></div></div></section>
-
-<section class="section">
-<h2 class="title">Cold Drinks 🥤</h2>
-<div class="menu-grid">
-<div class="card"><img src="coke.jpg"><div class="card-content"><h3>Coca Cola</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div><div class="card"><img src="pepsi.jpg"><div class="card-content"><h3>Pepsi</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div><div class="card"><img src="sprite.jpg"><div class="card-content"><h3>Sprite</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div><div class="card"><img src="fanta.jpg"><div class="card-content"><h3>Fanta</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div><div class="card"><img src="thumsup.jpg"><div class="card-content"><h3>Thums Up</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div><div class="card"><img src="maaza.jpg"><div class="card-content"><h3>Maaza</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div><div class="card"><img src="limca.jpg"><div class="card-content"><h3>Limca</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div><div class="card"><img src="dew.jpg"><div class="card-content"><h3>Mountain Dew</h3><div class="price">250ml ₹20<br>500ml ₹40<br>750ml ₹60<br>1L ₹80<br>1.25L ₹95<br>1.75L ₹120<br>2L ₹140<br>2.25L ₹160</div></div></div>
-</div></section>
-
-<section class="section"><h2 class="title">Snacks & Chips 🥔</h2><div class="menu-grid"><div class="card"><img src="lays.jpg"><div class="card-content"><h3>Lays</h3></div></div><div class="card"><img src="kurkure.jpg"><div class="card-content"><h3>Kurkure</h3></div></div></div></section>
-
-<section class="section">
-<h2 class="title">Custom Cakes 🎨</h2>
-<p style="text-align:center;margin-bottom:30px;">Every custom cake is handcrafted specially for your celebration ❤️</p>
-<div class="menu-grid">
-<div class="card"><img src="custom1.jpg"></div>
-<div class="card"><img src="custom2.jpg"></div>
-<div class="card"><img src="custom3.jpg"></div>
-<div class="card"><img src="custom4.jpg"></div>
-<div class="card"><img src="custom5.jpg"></div>
-<div class="card"><img src="custom6.jpg"></div>
-</div>
-<div style="text-align:center;margin-top:30px">
-<a class="btn" href="https://wa.me/918874247586?text=I want to order a custom cake">🎂 Click To Order Custom Cake</a>
+<section class="hero">
+<div>
+<h1>Fresh & Tasty Everyday</h1>
+<p>Cakes • Pastries • Ice Creams • Snacks • Cold Drinks</p>
 </div>
 </section>
 
-<section class="section about">
-<img src="shop.jpg">
-<div><h2>About Us</h2><p>Sweet Dreams Bakery serves fresh cakes, pastries, ice creams, snacks and cold drinks with quality and taste.</p></div>
+<section class="section">
+<h2 class="title">Signature Cakes</h2>
+<div class="grid">
+<div class="card"><img src="cake1.jpg"><div><h3>Cake 1</h3><p class="price">½ Kg ₹399<br>1 Kg ₹699<br>2 Kg ₹1299</p></div></div><div class="card"><img src="cake2.jpg"><div><h3>Cake 2</h3><p class="price">½ Kg ₹399<br>1 Kg ₹699<br>2 Kg ₹1299</p></div></div><div class="card"><img src="cake3.jpg"><div><h3>Cake 3</h3><p class="price">½ Kg ₹399<br>1 Kg ₹699<br>2 Kg ₹1299</p></div></div><div class="card"><img src="cake4.jpg"><div><h3>Cake 4</h3><p class="price">½ Kg ₹399<br>1 Kg ₹699<br>2 Kg ₹1299</p></div></div><div class="card"><img src="cake5.jpg"><div><h3>Cake 5</h3><p class="price">½ Kg ₹399<br>1 Kg ₹699<br>2 Kg ₹1299</p></div></div>
+</div></section>
+
+<section class="section">
+<h2 class="title">Pastries</h2>
+<div class="grid">
+<div class="card"><img src="pastry1.jpg"><div><h3>Pastry 1</h3><p class="price">₹99</p></div></div><div class="card"><img src="pastry2.jpg"><div><h3>Pastry 2</h3><p class="price">₹99</p></div></div><div class="card"><img src="pastry3.jpg"><div><h3>Pastry 3</h3><p class="price">₹99</p></div></div><div class="card"><img src="pastry4.jpg"><div><h3>Pastry 4</h3><p class="price">₹99</p></div></div>
+</div></section>
+
+<section class="section">
+<h2 class="title">Ice Cream Categories</h2>
+<div class="grid">
+<div class="card"><img src="ice1.jpg"><div><h3>Category 1</h3></div></div><div class="card"><img src="ice2.jpg"><div><h3>Category 2</h3></div></div><div class="card"><img src="ice3.jpg"><div><h3>Category 3</h3></div></div><div class="card"><img src="ice4.jpg"><div><h3>Category 4</h3></div></div><div class="card"><img src="ice5.jpg"><div><h3>Category 5</h3></div></div><div class="card"><img src="ice6.jpg"><div><h3>Category 6</h3></div></div><div class="card"><img src="ice7.jpg"><div><h3>Category 7</h3></div></div><div class="card"><img src="ice8.jpg"><div><h3>Category 8</h3></div></div><div class="card"><img src="ice9.jpg"><div><h3>Category 9</h3></div></div><div class="card"><img src="ice10.jpg"><div><h3>Category 10</h3></div></div><div class="card"><img src="ice11.jpg"><div><h3>Category 11</h3></div></div><div class="card"><img src="ice12.jpg"><div><h3>Category 12</h3></div></div><div class="card"><img src="ice13.jpg"><div><h3>Category 13</h3></div></div><div class="card"><img src="ice14.jpg"><div><h3>Category 14</h3></div></div><div class="card"><img src="ice15.jpg"><div><h3>Category 15</h3></div></div>
+</div></section>
+
+<section class="section">
+<h2 class="title">Cold Drinks</h2>
+
+<details class="accordion">
+<summary>Coca Cola</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+<details class="accordion">
+<summary>Pepsi</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+<details class="accordion">
+<summary>Sprite</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+<details class="accordion">
+<summary>Fanta</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+<details class="accordion">
+<summary>Thums Up</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+<details class="accordion">
+<summary>Maaza</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+<details class="accordion">
+<summary>Limca</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+<details class="accordion">
+<summary>Mountain Dew</summary>
+<div class="accordion-content">
+250ml - ₹20<br>
+500ml - ₹40<br>
+750ml - ₹60<br>
+1L - ₹80<br>
+1.25L - ₹95<br>
+1.75L - ₹120<br>
+2L - ₹140<br>
+2.25L - ₹160
+</div>
+</details>
+
+</section>
+
+<section class="section">
+<h2 class="title">Custom Cakes</h2>
+<div class="grid">
+<div class="card"><img src="custom1.jpg"></div><div class="card"><img src="custom2.jpg"></div><div class="card"><img src="custom3.jpg"></div><div class="card"><img src="custom4.jpg"></div><div class="card"><img src="custom5.jpg"></div><div class="card"><img src="custom6.jpg"></div>
+</div>
+<div style="text-align:center;margin-top:30px">
+<a class="btn" href="https://wa.me/918874247586">🎂 Click To Order Custom Cake</a>
+</div>
 </section>
 
 <section class="section">
 <div class="contact">
 <h2>Visit Our Shop 📍</h2>
 <p>Sweet Dreams Bakery</p>
-<p>A Bandhua, 284, Near St. Paul School</p>
-<p>Farrukhabad, Uttar Pradesh 209601</p>
 <p>📞 +91 88742 47586</p>
-<a class="btn" href="https://wa.me/918874247586">Chat on WhatsApp</a>
 </div>
 <br><br>
-<iframe src="https://www.google.com/maps?q=Sweet%20Dreams%20Bakery%20Farrukhabad&output=embed" width="100%" height="300" style="border:0;border-radius:20px;"></iframe>
+<iframe src="https://www.google.com/maps?q=Sweet%20Dreams%20Bakery%20Farrukhabad&output=embed" width="100%" height="320" style="border:0;border-radius:20px"></iframe>
 </section>
 
-<footer>© 2026 Sweet Dreams Bakery • Made with ❤️</footer>
-<a href="https://wa.me/918874247586" class="whatsapp-float">💬</a>
+<footer>© 2026 Sweet Dreams Bakery</footer>
+<a class="whatsapp" href="https://wa.me/918874247586">💬</a>
 </body></html>
